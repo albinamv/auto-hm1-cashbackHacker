@@ -1,14 +1,19 @@
 package ru.netology.service;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class CashbackHackServiceTest {
+    CashbackHackService service;
+
+    @BeforeTest
+    public void setUp() {
+        service = new CashbackHackService();
+    }
 
     @Test
     public void shouldOfferToBuyMore() {
-        CashbackHackService service = new CashbackHackService();
-
         int expected = 800;
         int actual = service.remain(3200);
 
@@ -17,8 +22,6 @@ public class CashbackHackServiceTest {
 
     @Test
     public void shouldOfferToBuyIfBelowBorder() {
-        CashbackHackService service = new CashbackHackService();
-
         int expected = 1;
         int actual = service.remain(1999);
 
@@ -27,8 +30,6 @@ public class CashbackHackServiceTest {
 
     @Test
     public void shouldOfferToBuyIfAboveBorder() {
-        CashbackHackService service = new CashbackHackService();
-
         int expected = 999;
         int actual = service.remain(2001);
 
@@ -37,8 +38,6 @@ public class CashbackHackServiceTest {
 
     @Test
     public void shouldNotOfferToBuyMore() {
-        CashbackHackService service = new CashbackHackService();
-
         int expected = 0;
         int actual = service.remain(1000);
 

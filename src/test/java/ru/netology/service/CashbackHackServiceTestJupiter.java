@@ -37,7 +37,7 @@ public class CashbackHackServiceTestJupiter {
     @org.junit.jupiter.api.Test
     public void shouldNotOfferToBuyMore() {
         int expected = 0;
-        int actual = service.remain(1000);
+        int actual = service.remain(3000);
 
         assertEquals(expected, actual);
     }

@@ -1,19 +1,16 @@
 package ru.netology.service;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
     CashbackHackService service;
 
-    @Before
+    @org.junit.Before
     public void setUp() {
         service = new CashbackHackService();
     }
 
-    @Test
+    @org.junit.Test
     public void shouldOfferToBuyMore() {
         int expected = 800;
         int actual = service.remain(3200);
@@ -21,7 +18,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void shouldOfferToBuyIfBelowBorder() {
         int expected = 1;
         int actual = service.remain(1999);
@@ -29,7 +26,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void shouldOfferToBuyIfAboveBorder() {
         int expected = 999;
         int actual = service.remain(2001);
@@ -37,7 +34,7 @@ public class CashbackHackServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
+    @org.junit.Test
     public void shouldNotOfferToBuyMore() {
         int expected = 0;
         int actual = service.remain(1000);
